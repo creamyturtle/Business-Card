@@ -28,7 +28,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -58,62 +57,62 @@ fun Card() {
 
     val image = painterResource(R.drawable.android_logo)
 
-        Column(
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = Color(0xFFcdeeca))
+    ) {
+
+        Spacer(Modifier.weight(1F))
+
+        Image(
+            painter = image,
+            contentDescription = null,
             modifier = Modifier
-                .fillMaxSize()
-                .background(color = Color(0xFFcdeeca))
-        ) {
+                .size(148.dp)
+                .background(color = Color(0xFF073042))
 
-            Spacer(Modifier.weight(1F))
+            //control size here
+        )
 
-            Image(
-                painter = image,
-                contentDescription = null,
-                modifier = Modifier
-                    .size(148.dp)
-                    .background(color = Color(0xFF073042))
+        Text(
+            text = "Sergio Granados",
+            modifier = Modifier.padding(vertical = 8.dp),
+            fontSize = 36.sp,
+            fontWeight = FontWeight.W300
 
-                //control size here
-            )
+        )
 
-            Text(
-                text = "Sergio Granados",
-                modifier = Modifier.padding(vertical = 8.dp),
-                fontSize = 36.sp,
-                fontWeight = FontWeight.W300
-
-            )
-
-            Text(
-                text = "Hater Extraordinaire",
-                color = Color(0xFF007400),
-                fontWeight = FontWeight.Bold
-            )
+        Text(
+            text = "Hater Extraordinaire",
+            color = Color(0xFF007400),
+            fontWeight = FontWeight.Bold
+        )
 
 
-            Spacer(Modifier.weight(0.75F))
+        Spacer(Modifier.weight(0.75F))
 
-            RowData(
-                icon = Icons.Rounded.Call,
-                text = stringResource(R.string.sergio_phone)
-            )
+        RowData(
+            icon = Icons.Rounded.Call,
+            text = stringResource(R.string.sergio_phone)
+        )
 
-            RowData(
-                icon = Icons.Rounded.Share,
-                text = stringResource(R.string.twitter_handle)
-            )
+        RowData(
+            icon = Icons.Rounded.Share,
+            text = stringResource(R.string.twitter_handle)
+        )
 
-            RowData(
-                icon = Icons.Rounded.Email,
-                text = stringResource(R.string.email)
-            )
+        RowData(
+            icon = Icons.Rounded.Email,
+            text = stringResource(R.string.email)
+        )
 
-            Spacer(Modifier.weight(0.25F))
+        Spacer(Modifier.weight(0.25F))
 
 
-        }
+    }
 
 }
 
